@@ -1,0 +1,646 @@
+
+
+@use "./custom.scss";
+@import "./bootstrap/dist/css/bootstrap.min.css";
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+@include media-breakpoint-down(sm) {
+    h2 {
+        margin-left: 0.1rem !important;
+    }
+    .footersec {
+    font-size: 0.5rem !important;
+    padding: 0.2rem !important;
+    height: 50vh !important;
+    
+  }
+
+}
+@include media-breakpoint-down(md) {
+    .words {
+        opacity:0;
+    }
+  
+        .img1 {
+            grid-area: 1/1/7/41 !important;
+            border-radius: 2%;
+            filter: none !important;
+            z-index: 1 !important;
+            margin: 3px;
+        }
+        .img2 {
+            grid-area: 7/1/14/41 !important;
+            border-radius: 2%;
+            filter: none !important;
+            margin: 3px;
+        }
+        .img3 {
+            grid-area: 14/1/21/41 !important;
+            border-radius: 2%;
+            filter: none !important;
+            margin: 3px;
+        }
+        .cardnr1 {
+            grid-area: 2/2/5/12 !important;
+           
+        }
+        .cardnr2 {
+            grid-area: 5/2/9/12 !important;
+            width: 100%;
+            height: 100%;
+            p {
+                font-size: 0.5rem !important;
+                text-align: justify;
+            }
+        }
+        .cardnr3 {
+            grid-area: 10/2/13/12 !important;
+        }
+        .cardnr4 {
+            grid-area: 13/2/17/12 !important;
+            width: 100%;
+            height: 100%;
+         
+        }
+    .footersec {
+        font-size: 0.5rem !important;
+        height: 20vh !important;
+        
+    }
+
+}
+@include media-breakpoint-between(md, xl) {
+.cardnr2, .cardnr4 {
+    font-size: 0.8rem !important;
+}
+
+.footersec { 
+    width: 50vw;
+    font-size: 0.7rem !important;	
+    height: 30vh 
+}
+}
+@mixin wordmix {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border-bottom-left-radius: 1rem;
+    text-shadow: #e0e0e0 1px 1px 0;
+    font-size: 1.5rem;
+    font-weight: 900;
+    
+}
+body { 
+background: linear-gradient(0deg, rgba(129,119,83,1) 0%, rgba(181,155,59,1) 94%);
+width: 100vw;
+height: 100%;
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows:3vh repeat(10, 10vh) repeat(10, 10vh) repeat(5, 10vh);
+font-family: 'Michroma', sans-serif;
+
+}
+
+header {
+    position: fixed;
+    width: 30rem;
+    height: 30rem;
+    z-index: 2;
+}
+nav {
+ width: 100%;
+ height: 100%;
+ 
+}
+.purchasecont {
+    position: relative;
+    grid-area: 1/1/2/6;
+    overflow: hidden;
+    background: linear-gradient(90deg, rgba(38,37,31,1) 0%, rgba(119,107,69,1) 6%, rgba(167,154,87,1) 30%, rgba(167,154,87,1) 70%, rgba(119,107,69,1) 94%, rgba(66,63,54,1) 100%);
+    color: #ffffff;
+    
+}
+.purchase::before {
+    position: absolute;
+    content: "Use this code to your first purchase *NONFORSIT2023*";
+    width: 50rem;
+    text-align: center;
+    margin-bottom: 40rem;
+    animation: purchase 12s 5s infinite linear;
+    margin-left: 155rem;
+    font-size: 1.2rem;
+}
+.purchase2::before {
+    position: absolute;
+    content: "*NONFORSIT2023*";
+    width: 10rem;
+    text-align: center;
+    margin-bottom: 40rem;
+    animation: purchase 12s 9s infinite linear;
+    margin-left: 165rem;
+    font-size: 1.2rem;
+}
+.purchase3::before {
+    position: absolute;
+    content: "Use this code to your first purchase *NONFORSIT2023*";
+    width: 50rem;
+    text-align: center;
+    margin-bottom: 40rem;
+    animation: purchase 12s 11s infinite linear;
+    margin-left: 175rem;
+    font-size: 1.2rem;
+}
+
+
+@keyframes purchase {
+    0% {
+        transform: translateX(0rem);
+    }
+    100% {
+        transform: translateX(-200rem);
+        
+    }
+}
+
+div.mainmenu {
+    position: absolute;
+    margin-top: 3rem;
+    margin-left: 1rem;
+    background-image: url(./images/burger.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 100%;
+    
+}
+ul.listhover {
+    margin: 0.20rem;
+    width: 13.4rem;
+    height: 14.2rem;
+    background: rgb(255,175,105);
+    background: linear-gradient(0deg, rgb(185, 162, 57) 4%, rgba(134,133,94,1)    94%);
+    border-top-left-radius: 14rem;
+    border-bottom-right-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.15rem;
+    opacity: 0;
+    transition: 500ms 300ms ease-in-out;
+    margin-top: 0.5rem;
+    
+}
+
+ul.listhover li {
+    transform: translateX(-15rem);
+    z-index: 1;
+   
+}
+.mainmenu:hover ul.listhover {
+   opacity: 0.75;
+   cursor: pointer;
+}
+
+
+.mainmenu:hover ul.listhover .litem1 {
+    font-weight: 700;
+    animation: menuli 500ms 250ms ease-in-out forwards;
+    
+}
+.mainmenu:hover ul.listhover .litem2 {
+    animation: menuli 500ms 350ms ease-in-out forwards;
+    
+}
+.mainmenu:hover ul.listhover .litem3 {
+animation: menuli 500ms 550ms ease-in-out forwards;
+}
+a {color: rgb(0, 0, 0);font-weight: 600;}
+a:link{text-decoration: none!important;}
+a:visited { color: rgb(0, 0, 0); }
+a:hover   { color: rgb(255, 255, 255); }
+a:active  { color:rgb(243, 219, 178) ;}
+@keyframes menuli {
+    0% {
+        transform: translateX(-12rem);
+    }
+100%{
+        transform: translateX(0rem);
+        
+        
+}
+}
+
+
+ul.listhover2 {
+    position: absolute;;
+    width: 12rem;
+    height: 12rem;
+    background: rgb(255,175,105);
+    background: linear-gradient(0deg, rgba(185, 162, 57) 4%, rgba(134,133,94,1)    94%);
+    border-bottom-right-radius: 14rem;
+    border-top-left-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(12rem);
+    gap: 1.15rem;
+    opacity: 0;
+    transition: 500ms 300ms ease-in-out;
+    margin-top: -1.6rem;
+    
+    
+   
+    
+}
+.mainmenu:hover ul.listhover2 {
+    opacity: 0.75;
+    cursor: pointer;
+    transition: 2s 1s;
+    
+    
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    background-image: url(./images/Stair-Climbing.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    grid-area: 1/1/11/6;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(12, 10vh);
+}
+section.words {
+    grid-area: 2/3/5/6;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    position: relative;
+.unexceptional {
+    grid-area: 1/4/2/6;
+   @include wordmix;
+   position: relative;
+   text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3);
+}
+div.unexceptional::before {
+    content: "";
+    position: absolute;
+   animation: exceptional 1.5s 1.5s forwards 1;
+    background-color: rgb(202, 140, 104);
+    margin-bottom: 0.7rem;
+    margin-right: 19.6rem;
+}
+div.unremarkable::before {
+    content: "";
+    position: absolute;
+   animation: exceptional 1.75s 2.5s forwards 1;
+    background-color: rgb(202, 140, 104);
+    margin-bottom: 0.7rem;
+    margin-right: 19.5rem;
+}
+div.backwards::before {
+    content: "";
+    position: absolute;
+   animation: backward 1.8s 3.5s forwards 1;
+    background-color: rgb(202, 140, 104);
+    margin-bottom: 0.7rem;
+    margin-right: 15rem;
+}
+div.backwards::after{
+    content: "ON";
+    position: absolute;
+    margin-bottom: 30rem;
+    margin-right: 6rem;
+    animation: onwards 1s 4.5s  forwards 1 ease-in;
+}
+@keyframes onwards {
+    0% {
+        transform:translateY(0rem)
+    }
+
+    20% {
+        transform:translateY(29.5rem) rotate(-30deg);
+    }
+    35%{
+        transform:translateY(25.5rem) rotate(30deg);
+    }
+    45% {
+        transform:translateY(26rem) rotate(-20deg);
+    }
+    70% {
+        transform:translateY(26.5rem) rotate(20deg);
+    }
+    75% {
+        transform:translateY(27.5rem) rotate(-10deg);
+    }
+    90% {
+        transform:translateY(27rem) rotate(10deg);
+    }
+    100%{
+        transform:translateY(28.5rem) rotate(0deg);
+    }
+
+
+}
+@keyframes exceptional{
+0% {
+    width: 0rem;
+    height: 0rem;
+    transform: translateX(0rem);
+}
+100% {
+    width: 3rem;
+    height: 0.3rem;
+    transform: translateX(4rem);
+}
+}
+@keyframes backward{
+    0% {
+        width: 0rem;
+        height: 0rem;
+        transform: translateX(0rem);
+    }
+    100% {
+        width: 5.5rem;
+        height: 0.3rem;
+        transform: translateX(4rem);
+    }
+    }
+
+
+.unremarkable {
+    grid-area: 2/3/2/5;
+    @include wordmix;
+    text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3);
+}
+.backwards {
+    grid-area: 3/2/3/4;
+    @include wordmix;
+    text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3);
+}
+.backwards::before {
+    content: "";
+    position: absolute;
+   animation:backwards 1s forwards;
+    
+    margin-bottom: 0.7rem;
+    margin-right: 15rem;
+}
+@keyframes backwards {
+    0%  {
+        content: "On";
+    }
+    100% {
+        transform: translateX(0rem);
+        font-weight: bold;
+        text-shadow: #e0e0e0 1px 1px 0;
+    }   
+}
+}
+
+@keyframes spanixframes {
+ from {
+    opacity: 1;
+ }
+ to {
+    opacity: 0;
+ }
+}
+@mixin spanstyle{
+    text-decoration: line-through;
+}
+.spanix {
+    @include spanstyle;
+}
+.buildyour {
+    opacity: 0;
+}
+.photocolage{
+    grid-area: 6/1/11/6;
+    display: grid;
+    grid-template-columns: repeat(40, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    position: relative;
+        .ourgyms {
+            position: absolute;
+            z-index: 2;
+            color: #ffffff;
+            text-shadow: #000000 1px 1px 0;
+            font-size: 2rem;
+            width: 14rem; 
+            
+        }
+        
+        .img1 {
+            position: relative;
+             grid-area: 5/3/19/14;
+            width: 100%;
+            filter: blur(3px);
+            background-image: url(./images/sven-mieke-1MrMsNBcsYA-unsplash.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .img1:hover {
+            filter: none;
+            transition:  0.7s;
+            cursor: pointer;
+            z-index: 1;
+        }
+        
+        .ourmission {
+            position: absolute;
+            z-index: 2;
+            color: #ffffff;
+            text-shadow: #000000 1px 1px 0;
+            font-size: 1.5em;
+            width: 16rem;
+            height: 1rem;
+            font-size: 2rem;
+        }
+        .img2 {
+            position: relative;
+            grid-area: 7/16/18/26;
+            width: 100%;
+            filter: blur(3px);
+            background-image: url(./images/jonathan-borba-zfPOelmDc-M-unsplash.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .img2:hover {
+            filter: none;
+            transition:  0.7s;
+            cursor: pointer;
+            z-index: 1;
+        }
+        .equipment{
+            position: absolute;
+            z-index: 2;
+            color: #ffffff;
+            text-shadow: #000000 1px 1px 0;
+            font-size: 1.5em;
+            width: 11.5rem;
+            height: 1rem;
+            font-size: 2rem;
+        }
+        .img3 {
+            position: relative;
+            grid-area: 5/28/19/39;
+            width: 100%;
+            filter: blur(3px);
+            background-image: url(./images/ctrl-a-meal-replacement-03e4RajfFAE-unsplash.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .img3:hover{
+            filter: none;
+            transition:  0.7s;
+            cursor: pointer;
+            z-index: 1;
+        }
+}
+
+
+
+section.hero {
+  
+    grid-area: 11/1/22/6;
+    width: 100%;
+    height: 100vh;
+    background-image: url(./images/content-pixie-be-6rpnQ30k-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(17, 1fr);
+        h1 {
+            grid-area: 1/4/2/10;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            color: beige;
+            margin-top: 1rem;
+            font-size: 3rem;
+            text-shadow: 2px 2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #584e4e, -2px -2px 0 #000000, 2px 0px 0 #8d927f, 0px 2px 0 #3b3838, -2px 0px 0 #3a3935, 0px -2px 0 #000000;
+        }
+        .ourgymsh2 {
+            font-weight: bold;
+            text-shadow: 2px 2px 0px #ffffff, 5px 4px 0px rgba(0,0,0,0.15);
+            flex-direction: column;
+            position: relative;
+            grid-area: 6/1/18/2;
+            margin-left: 40%;
+            writing-mode: vertical-lr ;text-orientation: upright;
+            width: 100%;
+            height: 100%;
+        }
+        .cardnr1 {
+
+        grid-area: 2/2/9/6;
+        text-rendering: optimizeLegibility;
+        font-weight: initial;
+        order: 2;
+        background-image: url(./images/alexander-redl-d3bYmnZ0ank-unsplash.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+        
+        
+    }
+    .cardnr2 {
+        grid-area: 2/6/9/12;
+        color: #ffffff;
+       order: 1;
+        width: 100%;
+        height: 100%;
+      p {
+        width: 90%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        backdrop-filter: invert(70%);
+        text-align: justify;
+        padding: 1rem;
+        font-size: 1.3rem
+        
+        
+      }
+    }
+    .cardnr3 {
+        grid-area: 10/2/17/6;
+        background-image: url(./images/chase-kinney-FMQBLyhD2HU-unsplash.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+        
+    }
+    .cardnr4 {
+        grid-area: 10/6/17/12;
+        color: #ffffff;
+        
+        width: 100%;
+        height: 100%;
+        p {
+            width: 90%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            backdrop-filter: invert(70%);
+            text-align: justify;
+            padding: 1rem;
+            font-size: 1.3rem
+          }
+    }
+}
+
+footer {
+    grid-area: 22/1/32/6;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+.imgfooter {
+     width: 100%;
+     grid-area: 2/8/9/12;
+     box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+
+    
+}
+}
+.footersec {
+    grid-area: 22/1/27/6;
+    position: absolute;
+    width: 90vw;
+    height: 50vh;
+    font-size: 2rem;
+    padding: 1rem;
+    
+}
+
+
+
+

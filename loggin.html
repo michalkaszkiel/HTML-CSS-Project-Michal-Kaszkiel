@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logg in</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" type="image/png" href="./images/334901954_214781017727567_7914522948964918057_n.jpg" sizes="32x32">
+    <link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7cc7365c35.js" crossorigin="anonymous"></script>
+
+<style>
+    body {
+        width: 100vw;
+        height: 100vh;
+        background-image: url(./images/mr-lee-f4RBYsY2hxA-unsplash.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    h1 {
+        grid-area: 5/3/6/4;
+        color: rgb(255, 222, 195);
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    form {
+      grid-area: 6/3/9/4;
+    }
+    input {
+        display: block;
+        width: 100%;
+        height: 40px;
+        margin: 5px 0;
+        padding: 5px;
+        border: none;
+        border-bottom: 1px solid rgb(255, 153, 0);
+        font-size: 14px;
+        color: rgb(0, 0, 0);
+        
+    }
+    input::placeholder {
+        color: rgb(0, 0, 0);
+    }
+    input:focus {
+        outline: none;
+        box-shadow: 0 3px 5px 0px rgb(243, 190, 1);
+    }
+    input:invalid { /*invalid when..*/
+        border-color: red;
+        color: red;
+    }
+    button:hover {
+        cursor: pointer
+    }
+    button:active {
+        background-color: rgb(255, 153, 0);
+    }
+    button {
+        background-color: rgb(255, 167, 94);
+        border-radius: 15%;
+        display: block;
+        width: 100%;
+        box-shadow: 0px 4px 4px 4px rgb(125, 125, 99) ;
+        margin-top: 5px;
+        border-bottom: 0px;
+        border-left: 0px;
+        border-right: 0px;
+    }
+    label {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+        color: rgb(112, 102, 102);
+    }
+    /*here input checkbox hides*/
+    .checkbox input { 
+        width: 0;
+        height: 0;
+        margin: 0;
+    }
+    span {
+        
+        display: inline-block;
+        height: 24px;
+        width: 54px;
+        background-color: bisque;
+        cursor: pointer;
+        border-radius: 15px;
+        padding: 2px;
+    }
+    span::before {
+        content: ''; /*empty content*/
+        height: 20px;
+        width: 20px;
+        background-color: rgb(127, 127, 63);
+        display: inline-block;
+        border-radius: 100%;
+        transition: 0.4s;
+    }
+  
+    input:checked + span { 
+        background-color: rgb(246, 198, 126);
+    }
+    input:checked + span::before {
+        transform: translateX(30px);
+        
+    }
+
+</style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="mainmenu">
+                <ul class="listhover">
+                    <li style="margin-top: 1.5rem" class="litem1">
+                        <a href="./gyms.html">Gyms</a>
+                    </li>
+                    <li class="litem2"><a href="./equipment.html">Equipment</a></li>
+                    <li class="litem3">
+                        <a class="aitem3" href="./index.html#hero">Our mission</a>
+                    </li>
+                </ul>
+                <ul class="listhover2">
+                    <li style="margin-top: 1.5rem" class="litem1">
+                        <a href="./index.html#fot">Partnership</a>
+                    </li>
+                    <li class="litem2">
+                        <a href="./loggin.html">Log in</a>
+                    </li>
+                    <li class="litem3"><a href="./register.html">Join us.</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <h1>Log in</h1>
+<form action="https://formspree.io/f/mjvdgpre" method="post">
+    <input type="text" type="email" placeholder="E-mail" minlength="3" maxlength="36">
+    <input type="password"  placeholder="Password">
+    <section>
+        <label style="color: white;">stay logged in</label>
+
+        <label class="checkbox">
+        <input type="checkbox" name="know-more">
+        <span></span>
+    </label>
+        <button type="submit">submit</button>
+    </section>
+</form>
+</body>
+</html>

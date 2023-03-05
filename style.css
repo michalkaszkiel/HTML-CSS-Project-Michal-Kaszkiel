@@ -1,4 +1,630 @@
-
-
-@use "./custom.css";
 @import "./bootstrap/dist/css/bootstrap.min.css";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+@media (max-width: 575.98px) {
+  h2 {
+    margin-left: 0.1rem !important;
+  }
+  .footersec {
+    font-size: 0.5rem !important;
+    padding: 0.2rem !important;
+    height: 50vh !important;
+  }
+}
+@media (max-width: 767.98px) {
+  .words {
+    opacity: 0;
+  }
+  .img1 {
+    grid-area: 1/1/7/41 !important;
+    border-radius: 2%;
+    filter: none !important;
+    z-index: 1 !important;
+    margin: 3px;
+  }
+  .img2 {
+    grid-area: 7/1/14/41 !important;
+    border-radius: 2%;
+    filter: none !important;
+    margin: 3px;
+  }
+  .img3 {
+    grid-area: 14/1/21/41 !important;
+    border-radius: 2%;
+    filter: none !important;
+    margin: 3px;
+  }
+  .cardnr1 {
+    grid-area: 2/2/5/12 !important;
+  }
+  .cardnr2 {
+    grid-area: 5/2/9/12 !important;
+    width: 100%;
+    height: 100%;
+  }
+  .cardnr2 p {
+    font-size: 0.5rem !important;
+    text-align: justify;
+  }
+  .cardnr3 {
+    grid-area: 10/2/13/12 !important;
+  }
+  .cardnr4 {
+    grid-area: 13/2/17/12 !important;
+    width: 100%;
+    height: 100%;
+  }
+  .footersec {
+    font-size: 0.5rem !important;
+    height: 20vh !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .cardnr2, .cardnr4 {
+    font-size: 0.8rem !important;
+  }
+  .footersec {
+    width: 50vw;
+    font-size: 0.7rem !important;
+    height: 30vh;
+  }
+}
+body {
+  background: linear-gradient(0deg, rgb(129, 119, 83) 0%, rgb(181, 155, 59) 94%);
+  width: 100vw;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 3vh repeat(10, 10vh) repeat(10, 10vh) repeat(5, 10vh);
+  font-family: "Michroma", sans-serif;
+}
+
+header {
+  position: fixed;
+  width: 30rem;
+  height: 30rem;
+  z-index: 2;
+}
+
+nav {
+  width: 100%;
+  height: 100%;
+}
+
+.purchasecont {
+  position: relative;
+  grid-area: 1/1/2/6;
+  overflow: hidden;
+  background: linear-gradient(90deg, rgb(38, 37, 31) 0%, rgb(119, 107, 69) 6%, rgb(167, 154, 87) 30%, rgb(167, 154, 87) 70%, rgb(119, 107, 69) 94%, rgb(66, 63, 54) 100%);
+  color: #ffffff;
+}
+
+.purchase::before {
+  position: absolute;
+  content: "Use this code to your first purchase *NONFORSIT2023*";
+  width: 50rem;
+  text-align: center;
+  margin-bottom: 40rem;
+  animation: purchase 12s 5s infinite linear;
+  margin-left: 155rem;
+  font-size: 1.2rem;
+}
+
+.purchase2::before {
+  position: absolute;
+  content: "*NONFORSIT2023*";
+  width: 10rem;
+  text-align: center;
+  margin-bottom: 40rem;
+  animation: purchase 12s 9s infinite linear;
+  margin-left: 165rem;
+  font-size: 1.2rem;
+}
+
+.purchase3::before {
+  position: absolute;
+  content: "Use this code to your first purchase *NONFORSIT2023*";
+  width: 50rem;
+  text-align: center;
+  margin-bottom: 40rem;
+  animation: purchase 12s 11s infinite linear;
+  margin-left: 175rem;
+  font-size: 1.2rem;
+}
+
+@keyframes purchase {
+  0% {
+    transform: translateX(0rem);
+  }
+  100% {
+    transform: translateX(-200rem);
+  }
+}
+div.mainmenu {
+  position: absolute;
+  margin-top: 3rem;
+  margin-left: 1rem;
+  background-image: url(./images/burger.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 100%;
+}
+
+ul.listhover {
+  margin: 0.2rem;
+  width: 13.4rem;
+  height: 14.2rem;
+  background: rgb(255, 175, 105);
+  background: linear-gradient(0deg, rgb(185, 162, 57) 4%, rgb(134, 133, 94) 94%);
+  border-top-left-radius: 14rem;
+  border-bottom-right-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.15rem;
+  opacity: 0;
+  transition: 500ms 300ms ease-in-out;
+  margin-top: 0.5rem;
+}
+
+ul.listhover li {
+  transform: translateX(-15rem);
+  z-index: 1;
+}
+
+.mainmenu:hover ul.listhover {
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+.mainmenu:hover ul.listhover .litem1 {
+  font-weight: 700;
+  animation: menuli 500ms 250ms ease-in-out forwards;
+}
+
+.mainmenu:hover ul.listhover .litem2 {
+  animation: menuli 500ms 350ms ease-in-out forwards;
+}
+
+.mainmenu:hover ul.listhover .litem3 {
+  animation: menuli 500ms 550ms ease-in-out forwards;
+}
+
+a {
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+}
+
+a:link {
+  text-decoration: none !important;
+}
+
+a:visited {
+  color: rgb(0, 0, 0);
+}
+
+a:hover {
+  color: rgb(255, 255, 255);
+}
+
+a:active {
+  color: rgb(243, 219, 178);
+}
+
+@keyframes menuli {
+  0% {
+    transform: translateX(-12rem);
+  }
+  100% {
+    transform: translateX(0rem);
+  }
+}
+ul.listhover2 {
+  position: absolute;
+  width: 12rem;
+  height: 12rem;
+  background: rgb(255, 175, 105);
+  background: linear-gradient(0deg, rgb(185, 162, 57) 4%, rgb(134, 133, 94) 94%);
+  border-bottom-right-radius: 14rem;
+  border-top-left-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(12rem);
+  gap: 1.15rem;
+  opacity: 0;
+  transition: 500ms 300ms ease-in-out;
+  margin-top: -1.6rem;
+}
+
+.mainmenu:hover ul.listhover2 {
+  opacity: 0.75;
+  cursor: pointer;
+  transition: 2s 1s;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  background-image: url(./images/Stair-Climbing.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  grid-area: 1/1/11/6;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(12, 10vh);
+}
+
+section.words {
+  grid-area: 2/3/5/6;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  position: relative;
+}
+section.words .unexceptional {
+  grid-area: 1/4/2/6;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border-bottom-left-radius: 1rem;
+  text-shadow: #e0e0e0 1px 1px 0;
+  font-size: 1.5rem;
+  font-weight: 900;
+  position: relative;
+  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
+}
+section.words div.unexceptional::before {
+  content: "";
+  position: absolute;
+  animation: exceptional 1.5s 1.5s forwards 1;
+  background-color: rgb(202, 140, 104);
+  margin-bottom: 0.7rem;
+  margin-right: 19.6rem;
+}
+section.words div.unremarkable::before {
+  content: "";
+  position: absolute;
+  animation: exceptional 1.75s 2.5s forwards 1;
+  background-color: rgb(202, 140, 104);
+  margin-bottom: 0.7rem;
+  margin-right: 19.5rem;
+}
+section.words div.backwards::before {
+  content: "";
+  position: absolute;
+  animation: backward 1.8s 3.5s forwards 1;
+  background-color: rgb(202, 140, 104);
+  margin-bottom: 0.7rem;
+  margin-right: 15rem;
+}
+section.words div.backwards::after {
+  content: "ON";
+  position: absolute;
+  margin-bottom: 30rem;
+  margin-right: 6rem;
+  animation: onwards 1s 4.5s forwards 1 ease-in;
+}
+@keyframes onwards {
+  0% {
+    transform: translateY(0rem);
+  }
+  20% {
+    transform: translateY(29.5rem) rotate(-30deg);
+  }
+  35% {
+    transform: translateY(25.5rem) rotate(30deg);
+  }
+  45% {
+    transform: translateY(26rem) rotate(-20deg);
+  }
+  70% {
+    transform: translateY(26.5rem) rotate(20deg);
+  }
+  75% {
+    transform: translateY(27.5rem) rotate(-10deg);
+  }
+  90% {
+    transform: translateY(27rem) rotate(10deg);
+  }
+  100% {
+    transform: translateY(28.5rem) rotate(0deg);
+  }
+}
+@keyframes exceptional {
+  0% {
+    width: 0rem;
+    height: 0rem;
+    transform: translateX(0rem);
+  }
+  100% {
+    width: 3rem;
+    height: 0.3rem;
+    transform: translateX(4rem);
+  }
+}
+@keyframes backward {
+  0% {
+    width: 0rem;
+    height: 0rem;
+    transform: translateX(0rem);
+  }
+  100% {
+    width: 5.5rem;
+    height: 0.3rem;
+    transform: translateX(4rem);
+  }
+}
+section.words .unremarkable {
+  grid-area: 2/3/2/5;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border-bottom-left-radius: 1rem;
+  text-shadow: #e0e0e0 1px 1px 0;
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
+}
+section.words .backwards {
+  grid-area: 3/2/3/4;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border-bottom-left-radius: 1rem;
+  text-shadow: #e0e0e0 1px 1px 0;
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
+}
+section.words .backwards::before {
+  content: "";
+  position: absolute;
+  animation: backwards 1s forwards;
+  margin-bottom: 0.7rem;
+  margin-right: 15rem;
+}
+@keyframes backwards {
+  0% {
+    content: "On";
+  }
+  100% {
+    transform: translateX(0rem);
+    font-weight: bold;
+    text-shadow: #e0e0e0 1px 1px 0;
+  }
+}
+
+@keyframes spanixframes {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.spanix {
+  text-decoration: line-through;
+}
+
+.buildyour {
+  opacity: 0;
+}
+
+.photocolage {
+  grid-area: 6/1/11/6;
+  display: grid;
+  grid-template-columns: repeat(40, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  position: relative;
+}
+.photocolage .ourgyms {
+  position: absolute;
+  z-index: 2;
+  color: #ffffff;
+  text-shadow: #000000 1px 1px 0;
+  font-size: 2rem;
+  width: 14rem;
+}
+.photocolage .img1 {
+  position: relative;
+  grid-area: 5/3/19/14;
+  width: 100%;
+  filter: blur(3px);
+  background-image: url(./images/sven-mieke-1MrMsNBcsYA-unsplash.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.photocolage .img1:hover {
+  filter: none;
+  transition: 0.7s;
+  cursor: pointer;
+  z-index: 1;
+}
+.photocolage .ourmission {
+  position: absolute;
+  z-index: 2;
+  color: #ffffff;
+  text-shadow: #000000 1px 1px 0;
+  font-size: 1.5em;
+  width: 16rem;
+  height: 1rem;
+  font-size: 2rem;
+}
+.photocolage .img2 {
+  position: relative;
+  grid-area: 7/16/18/26;
+  width: 100%;
+  filter: blur(3px);
+  background-image: url(./images/jonathan-borba-zfPOelmDc-M-unsplash.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.photocolage .img2:hover {
+  filter: none;
+  transition: 0.7s;
+  cursor: pointer;
+  z-index: 1;
+}
+.photocolage .equipment {
+  position: absolute;
+  z-index: 2;
+  color: #ffffff;
+  text-shadow: #000000 1px 1px 0;
+  font-size: 1.5em;
+  width: 11.5rem;
+  height: 1rem;
+  font-size: 2rem;
+}
+.photocolage .img3 {
+  position: relative;
+  grid-area: 5/28/19/39;
+  width: 100%;
+  filter: blur(3px);
+  background-image: url(./images/ctrl-a-meal-replacement-03e4RajfFAE-unsplash.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.photocolage .img3:hover {
+  filter: none;
+  transition: 0.7s;
+  cursor: pointer;
+  z-index: 1;
+}
+
+section.hero {
+  grid-area: 11/1/22/6;
+  width: 100%;
+  height: 100vh;
+  background-image: url(./images/content-pixie-be-6rpnQ30k-unsplash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(17, 1fr);
+}
+section.hero h1 {
+  grid-area: 1/4/2/10;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: beige;
+  margin-top: 1rem;
+  font-size: 3rem;
+  text-shadow: 2px 2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #584e4e, -2px -2px 0 #000000, 2px 0px 0 #8d927f, 0px 2px 0 #3b3838, -2px 0px 0 #3a3935, 0px -2px 0 #000000;
+}
+section.hero .ourgymsh2 {
+  font-weight: bold;
+  text-shadow: 2px 2px 0px #ffffff, 5px 4px 0px rgba(0, 0, 0, 0.15);
+  flex-direction: column;
+  position: relative;
+  grid-area: 6/1/18/2;
+  margin-left: 40%;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  width: 100%;
+  height: 100%;
+}
+section.hero .cardnr1 {
+  grid-area: 2/2/9/6;
+  text-rendering: optimizeLegibility;
+  font-weight: initial;
+  order: 2;
+  background-image: url(./images/alexander-redl-d3bYmnZ0ank-unsplash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+section.hero .cardnr2 {
+  grid-area: 2/6/9/12;
+  color: #ffffff;
+  order: 1;
+  width: 100%;
+  height: 100%;
+}
+section.hero .cardnr2 p {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  backdrop-filter: invert(70%);
+  text-align: justify;
+  padding: 1rem;
+  font-size: 1.3rem;
+}
+section.hero .cardnr3 {
+  grid-area: 10/2/17/6;
+  background-image: url(./images/chase-kinney-FMQBLyhD2HU-unsplash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+section.hero .cardnr4 {
+  grid-area: 10/6/17/12;
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
+}
+section.hero .cardnr4 p {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  backdrop-filter: invert(70%);
+  text-align: justify;
+  padding: 1rem;
+  font-size: 1.3rem;
+}
+
+footer {
+  grid-area: 22/1/32/6;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+}
+footer .imgfooter {
+  width: 100%;
+  grid-area: 2/8/9/12;
+  box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+.footersec {
+  grid-area: 22/1/27/6;
+  position: absolute;
+  width: 90vw;
+  height: 50vh;
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+/*# sourceMappingURL=style.css.map */
