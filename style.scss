@@ -110,6 +110,7 @@ grid-template-columns: repeat(5, 1fr);
 grid-template-rows:3vh repeat(10, 10vh) repeat(10, 10vh) repeat(5, 10vh);
 font-family: 'Michroma', sans-serif;
 
+
 }
 
 header {
@@ -168,7 +169,7 @@ nav {
         transform: translateX(0rem);
     }
     100% {
-        transform: translateX(-200rem);
+        transform: translateX(-222rem);
         
     }
 }
