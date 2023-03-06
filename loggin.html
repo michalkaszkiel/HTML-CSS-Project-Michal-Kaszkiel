@@ -115,7 +115,21 @@
         transform: translateX(30px);
         
     }
-
+    @media (min-width: 0px) and (max-width: 260px){
+        form{
+            width: 65vw;
+        }
+    }
+    @media (min-width: 260px) and (max-width: 576px){
+        form{
+            width: 45vw;
+        }
+    }
+    @media (min-width: 576px) and (max-width: 767px){
+        form{
+            width: 50vw;
+        }
+    }
 </style>
 </head>
 <body>
@@ -145,8 +159,8 @@
     </header>
     <h1>Log in</h1>
 <form action="https://formspree.io/f/mjvdgpre" method="post">
-    <input type="text" type="email" placeholder="E-mail" minlength="3" maxlength="36">
-    <input type="password"  placeholder="Password">
+    <input type="text" type="email" placeholder="E-mail" minlength="3" maxlength="36" required>
+    <input type="password"  placeholder="Password" required>
     <section>
         <label style="color: white;">stay logged in</label>
 
