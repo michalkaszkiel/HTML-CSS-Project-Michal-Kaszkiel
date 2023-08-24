@@ -203,32 +203,32 @@ ul.listhover {
     align-items: center;
     gap: 1.15rem;
     opacity: 0;
-    transition: 500ms 300ms ease-in-out;
+    transition: 300ms 300ms ease-in-out;
     margin-top: 0.5rem;
 }
 
-ul.listhover li {
+/* ul.listhover li {
     transform: translateX(-15rem);
     z-index: 1;
-}
+} */
 
 .mainmenu:hover ul.listhover {
     opacity: 0.75;
     cursor: pointer;
 }
 
-.mainmenu:hover ul.listhover .litem1 {
+/* .mainmenu:hover ul.listhover .litem1 {
     font-weight: 700;
     animation: menuli 500ms 250ms ease-in-out forwards;
-}
+} */
 
-.mainmenu:hover ul.listhover .litem2 {
+/* .mainmenu:hover ul.listhover .litem2 {
     animation: menuli 500ms 350ms ease-in-out forwards;
 }
 
 .mainmenu:hover ul.listhover .litem3 {
     animation: menuli 500ms 550ms ease-in-out forwards;
-}
+} */
 
 a {
     color: rgb(0, 0, 0);
@@ -236,7 +236,7 @@ a {
 }
 
 a:link {
-    text-decoration: none !important;
+    text-decoration: none;
 }
 
 a:visited {
@@ -276,7 +276,7 @@ ul.listhover2 {
     transform: translateX(12rem);
     gap: 1.15rem;
     opacity: 0;
-    transition: 500ms 300ms ease-in-out;
+    transition: 300ms 300ms ease-in-out;
     margin-top: -1.6rem;
 }
 

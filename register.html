@@ -1,277 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Michroma&display=swap"
-        rel="stylesheet"/>
-    <script
-        src="https://kit.fontawesome.com/7cc7365c35.js"
-        crossorigin="anonymous"></script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Register</title>
+        <link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Michroma&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            src="https://kit.fontawesome.com/7cc7365c35.js"
+            crossorigin="anonymous"
+        ></script>
         <style>
-          * {
-            text-decoration: none;
-            list-style: none;
-            font-family: 'Michroma', sans-serif;
-          }
+            * {
+                text-decoration: none;
+                list-style: none;
+                font-family: "Michroma", sans-serif;
+            }
             header {
-  position: fixed;
-  width: 30rem;
-  height: 30rem;
-  z-index: 2;
-}
+                position: fixed;
+                width: 30rem;
+                height: 30rem;
+                z-index: 2;
+            }
 
-nav {
-  width: 100%;
-  height: 100%;
-}
+            nav {
+                width: 100%;
+                height: 100%;
+            }
 
-div.mainmenu {
-    position: absolute;
-    margin-left: 1rem;
-    background-image: url(./images/burger.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 5rem;
-    height: 5rem;
-    border-radius: 100%;
-    
-    
-}
-ul.listhover {
-    margin: 0.20rem;
-    width: 13.4rem;
-    height: 14.2rem;
-    background: rgb(255,175,105);
-    background: linear-gradient(0deg, rgb(185, 162, 57) 4%, rgba(134,133,94,1)    94%);
-    border-top-left-radius: 14rem;
-    border-bottom-right-radius: 0.25rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1.15rem;
-    opacity: 0;
-    transition: 500ms 300ms ease-in-out;
-    margin-top: 0.5rem;
-    
-}
+            div.mainmenu {
+                position: absolute;
+                margin-left: 1rem;
+                background-image: url(./images/burger.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 5rem;
+                height: 5rem;
+                border-radius: 100%;
+            }
+            ul.listhover {
+                margin: 0.2rem;
+                width: 13.4rem;
+                height: 14.2rem;
+                background: rgb(255, 175, 105);
+                background: linear-gradient(
+                    0deg,
+                    rgb(185, 162, 57) 4%,
+                    rgba(134, 133, 94, 1) 94%
+                );
+                border-top-left-radius: 14rem;
+                border-bottom-right-radius: 0.25rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1.15rem;
+                opacity: 0;
+                transition: 500ms 300ms ease-in-out;
+                margin-top: 0.5rem;
+            }
 
-ul.listhover li {
-    transform: translateX(-15rem);
-    z-index: 1;
-   
-}
-.mainmenu:hover ul.listhover {
-   opacity: 0.75;
-   cursor: pointer;
-}
+            /* ul.listhover li {
+                transform: translateX(-15rem);
+                z-index: 1;
+            } */
+            .mainmenu:hover ul.listhover {
+                opacity: 0.75;
+                cursor: pointer;
+            }
 
+            /* .mainmenu:hover ul.listhover .litem1 {
+                font-weight: 700;
+                animation: menuli 500ms 250ms ease-in-out forwards;
+            }
+            .mainmenu:hover ul.listhover .litem2 {
+                animation: menuli 500ms 350ms ease-in-out forwards;
+            }
+            .mainmenu:hover ul.listhover .litem3 {
+                animation: menuli 500ms 550ms ease-in-out forwards;
+            } */
+            a {
+                color: rgb(0, 0, 0);
+                font-weight: 600;
+            }
+            a:link {
+                text-decoration: none !important;
+            }
+            a:visited {
+                color: rgb(0, 0, 0);
+            }
+            a:hover {
+                color: rgb(255, 255, 255);
+            }
+            a:active {
+                color: rgb(243, 219, 178);
+            }
+            @keyframes menuli {
+                0% {
+                    transform: translateX(-12rem);
+                }
+                100% {
+                    transform: translateX(0rem);
+                }
+            }
 
-.mainmenu:hover ul.listhover .litem1 {
-    font-weight: 700;
-    animation: menuli 500ms 250ms ease-in-out forwards;
-    
-}
-.mainmenu:hover ul.listhover .litem2 {
-    animation: menuli 500ms 350ms ease-in-out forwards;
-    
-}
-.mainmenu:hover ul.listhover .litem3 {
-animation: menuli 500ms 550ms ease-in-out forwards;
-}
-a {color: rgb(0, 0, 0);font-weight: 600;}
-a:link{text-decoration: none!important;}
-a:visited { color: rgb(0, 0, 0); }
-a:hover   { color: rgb(255, 255, 255); }
-a:active  { color:rgb(243, 219, 178) ;}
-@keyframes menuli {
-    0% {
-        transform: translateX(-12rem);
-    }
-100%{
-        transform: translateX(0rem);
-        
-        
-}
-}
+            ul.listhover2 {
+                position: absolute;
+                width: 12rem;
+                height: 12rem;
+                background: rgb(255, 175, 105);
+                background: linear-gradient(
+                    0deg,
+                    rgba(185, 162, 57) 4%,
+                    rgba(134, 133, 94, 1) 94%
+                );
+                border-bottom-right-radius: 14rem;
+                border-top-left-radius: 0.25rem;
+                display: flex;
+                flex-direction: column;
+                transform: translateX(12rem);
+                gap: 1.15rem;
+                opacity: 0;
+                transition: 500ms 300ms ease-in-out;
+                margin-top: -1.6rem;
+            }
+            .mainmenu:hover ul.listhover2 {
+                opacity: 0.75;
+                cursor: pointer;
+                transition: 2s 1s;
+            }
 
-
-ul.listhover2 {
-    position: absolute;;
-    width: 12rem;
-    height: 12rem;
-    background: rgb(255,175,105);
-    background: linear-gradient(0deg, rgba(185, 162, 57) 4%, rgba(134,133,94,1)    94%);
-    border-bottom-right-radius: 14rem;
-    border-top-left-radius: 0.25rem;
-    display: flex;
-    flex-direction: column;
-    transform: translateX(12rem);
-    gap: 1.15rem;
-    opacity: 0;
-    transition: 500ms 300ms ease-in-out;
-    margin-top: -1.6rem;
-    
-    
-   
-    
-}
-.mainmenu:hover ul.listhover2 {
-    opacity: 0.75;
-    cursor: pointer;
-    transition: 2s 1s;
-    
-    
-}
-
-body {
-    width: 100vw;
-    height: 100%;
-    background-image: url(./images/heidi-erickson-CPSjcuuV8E8-unsplash.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    
- 
-}
-.regi {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-   margin-top: 5rem;
-    width: 100vw;
-    box-shadow: 0px 0px 0px 5px #A0A0A0, inset 0px 10px 27px -8px #141414, inset 0px -10px 27px -8px #a38319, 5px 5px 15px 5px rgba(0,0,0,0);
-}
-h1 {
-    font-size: 1.5rem;
-    color: rgb(255, 255, 255);
-}
-form {
-  display: flex;
-  flex-flow: row;
-  align-items: center;
-}
-@media (min-width:0px) and (max-width:660px) {
-    form {
-      display: flex;
-  flex-flow: column;
-  align-items: center;
-    }
-}
+            body {
+                width: 100vw;
+                height: 100%;
+                background-image: url(./images/heidi-erickson-CPSjcuuV8E8-unsplash.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+            .regi {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 5rem;
+                width: 100vw;
+                box-shadow: 0px 0px 0px 5px #a0a0a0,
+                    inset 0px 10px 27px -8px #141414,
+                    inset 0px -10px 27px -8px #a38319,
+                    5px 5px 15px 5px rgba(0, 0, 0, 0);
+            }
+            h1 {
+                font-size: 1.5rem;
+                color: rgb(255, 255, 255);
+            }
+            form {
+                display: flex;
+                flex-flow: row;
+                align-items: center;
+            }
+            @media (min-width: 0px) and (max-width: 660px) {
+                form {
+                    display: flex;
+                    flex-flow: column;
+                    align-items: center;
+                }
+            }
         </style>
-</head>
-<body>
-  <header>
-    <nav>
-        <div class="mainmenu">
-            <ul class="listhover">
-                <li style="margin-top: 1.5rem" class="litem1">
-                    <a href="./gyms.html">Gyms</a>
-                </li>
-                <li class="litem2"><a href="./equipment.html">Equipment</a></li>
-                <li class="litem3">
-                    <a class="aitem3" href="./index.html#hero">Our mission</a>
-                </li>
-            </ul>
-            <ul class="listhover2">
-                <li style="margin-top: 1.5rem" class="litem1">
-                    <a href="./index.html#fot">Partnership</a>
-                </li>
-                <li class="litem2">
-                    <a href="./loggin.html">Log in</a>
-                </li>
-                <li class="litem3"><a href="./register.html">Join us.</a></li>
-            </ul>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="mainmenu">
+                    <ul class="listhover">
+                        <li style="margin-top: 1.5rem" class="litem1">
+                            <a href="./gyms.html">Gyms</a>
+                        </li>
+                        <li class="litem2">
+                            <a href="./equipment.html">Equipment</a>
+                        </li>
+                        <li class="litem3">
+                            <a class="aitem3" href="./index.html#hero"
+                                >Our mission</a
+                            >
+                        </li>
+                    </ul>
+                    <ul class="listhover2">
+                        <li style="margin-top: 1.5rem" class="litem1">
+                            <a href="./index.html#fot">Partnership</a>
+                        </li>
+                        <li class="litem2">
+                            <a href="./loggin.html">Log in</a>
+                        </li>
+                        <li class="litem3">
+                            <a href="./register.html">Join us.</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div
+            class="d-flex row justify-content-center align-content-center mt-5"
+            cardscont
+        >
+            <div class="card m-5" style="width: 18.5rem">
+                <img
+                    src="./images/andreea-boncota-icxORkp1Yv0-unsplash.jpg"
+                    class="card-img-top"
+                    alt="..."
+                />
+                <div class="card-body">
+                    <h5 class="card-title">Flexible Pass</h5>
+                    <p class="card-text">25💶/month</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Access to the club 24/7</li>
+                    <li class="list-group-item">Free water for training</li>
+                    <li class="list-group-item">
+                        Diets and training plans included
+                    </li>
+                    <li class="list-group-item">
+                        A month's notice period with effect at the end of the
+                        period
+                    </li>
+                    <li class="list-group-item">Personalized training plan</li>
+                </ul>
+                <div class="card-body text-center">
+                    <a href="#" class="card-link">join now</a>
+                    <a href="#" class="card-link">see all features</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18.5rem">
+                <img
+                    src="./images/sushil-ghimire-5UbIqV58CW8-unsplash.jpg"
+                    class="card-img-top"
+                    alt="..."
+                />
+                <div class="card-body">
+                    <h5 class="card-title">6 months pass</h5>
+                    <p class="card-text">15💶/per month</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Access to the club 24/7</li>
+                    <li class="list-group-item">Free water for training</li>
+                    <li class="list-group-item">
+                        Diets and training plans included
+                    </li>
+                    <li class="list-group-item">
+                        A month's notice period with effect at the end of the
+                        period
+                    </li>
+                    <li class="list-group-item">
+                        Group lessons included in the price
+                    </li>
+                </ul>
+                <div class="card-body text-center">
+                    <a href="#" class="card-link">join now</a>
+                    <a href="#" class="card-link">see all features</a>
+                </div>
+            </div>
+            <div class="card m-5" style="width: 18.5rem">
+                <img
+                    src="./images/edgar-chaparro-sHfo3WOgGTU-unsplash.jpg"
+                    class="card-img-top"
+                    alt="..."
+                />
+                <div class="card-body">
+                    <h5 class="card-title">Hardcore pass</h5>
+                    <p class="card-text">450💶/per year</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Access to the club 24/7</li>
+                    <li class="list-group-item">Free water for training</li>
+                    <li class="list-group-item">
+                        Diets and training plans included
+                    </li>
+                    <li class="list-group-item">
+                        12 months of training for the price of 10
+                    </li>
+                    <li class="list-group-item">
+                        Group lessons included in the price
+                    </li>
+                </ul>
+                <div class="card-body text-center">
+                    <a href="#" class="card-link">join now</a>
+                    <a href="#" class="card-link">see all features</a>
+                </div>
+            </div>
         </div>
-    </nav>
-</header>
-    <div class="d-flex row justify-content-center align-content-center mt-5" cardscont>
-        <div class="card m-5" style="width: 18rem;">
-            <img src="./images/andreea-boncota-icxORkp1Yv0-unsplash.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Flexible Pass</h5>
-              <p class="card-text">25€/month</p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Access to the club 24/7</li>
-              <li class="list-group-item">Free water for training</li>
-              <li class="list-group-item">
-                Diets and training plans included</li>
-              <li class="list-group-item">A month's notice period with effect at the end of the period</li>
-              <li class="list-group-item">
-                Personalized training plan</li>
-
-            </ul>
-            <div class="card-body">
-                <a href="#" class="card-link">join now</a>
-                <a href="#" class="card-link">see all features</a>
-            </div>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <img src="./images/sushil-ghimire-5UbIqV58CW8-unsplash.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">6 months pass</h5>
-              <p class="card-text">15€/per month</p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Access to the club 24/7</li>
-                <li class="list-group-item">Free water for training</li>
-                <li class="list-group-item">
-                  Diets and training plans included</li>
-                <li class="list-group-item">A month's notice period with effect at the end of the period</li>
-                <li class="list-group-item">
-                    Group lessons included in the price</li>
-            </ul>
-            <div class="card-body">
-              <a href="#" class="card-link">join now</a>
-              <a href="#" class="card-link">see all features</a>
-            </div>
-          </div>
-          <div class="card m-5" style="width: 18rem;">
-            <img src="./images/edgar-chaparro-sHfo3WOgGTU-unsplash.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Hardcore pass</h5>
-              <p class="card-text">450€/per year</p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Access to the club 24/7</li>
-                <li class="list-group-item">Free water for training</li>
-                <li class="list-group-item">
-                  Diets and training plans included</li>
-                <li class="list-group-item">12 months of training for the price of 10</li>
-                <li class="list-group-item">
-                    Group lessons included in the price</li>
-            </ul>
-            <div class="card-body">
-                <a href="#" class="card-link">join now</a>
-                <a href="#" class="card-link">see all features</a>
-            </div>
-          </div>
-    </div>
-    <div class="regi">
-      
-        <form action="https://formspree.io/f/mjvdgpre" method="post">
-          <h1 style="margin: 1rem;">Or leave us an e-mail our experts prepare best offer for you.</h1>
-            <input style="width: 15rem; height: 2rem;" type="text" placeholder="Full name" minlength="3" maxlength="36">
-            <input style="width:15rem; height: 2rem;" type="email"  placeholder="E-mail" required>
-            <section>
-                <label style="color: white; font-size: 0.7rem;">I want recieve e-mail about offers</label>
-                <label class="checkbox">
-                <input type="checkbox" name="know-more">
-                <span></span>
-            </label>
-                <button type="submit">submit</button>
-            </section>
-        </form>
-    </div>
-      <script src="./bootstrap/dist/js/bootstrap.bundle.js"></script>
-</body>
+        <div class="regi">
+            <form action="https://formspree.io/f/mjvdgpre" method="post">
+                <h1 style="margin: 1rem">
+                    Or leave us an e-mail our experts prepare best offer for
+                    you.
+                </h1>
+                <input
+                    style="width: 15rem; height: 2rem"
+                    type="text"
+                    placeholder="Full name"
+                    minlength="3"
+                    maxlength="36"
+                />
+                <input
+                    style="width: 15rem; height: 2rem"
+                    type="email"
+                    placeholder="E-mail"
+                    required
+                />
+                <section>
+                    <label style="color: white; font-size: 0.7rem"
+                        >I want recieve e-mail about offers</label
+                    >
+                    <label class="checkbox">
+                        <input type="checkbox" name="know-more" />
+                        <span></span>
+                    </label>
+                    <button type="submit">submit</button>
+                </section>
+            </form>
+        </div>
+        <script src="./bootstrap/dist/js/bootstrap.bundle.js"></script>
+    </body>
 </html>
