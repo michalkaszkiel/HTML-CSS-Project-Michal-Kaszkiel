@@ -1,5 +1,18 @@
 {
-  "dependencies": {
-    "bootstrap": "^5.2.3"
-  }
+    "dependencies": {
+        "bootstrap": "^5.2.3"
+    },
+    "name": "html-css-project-michal-kaszkiel",
+    "version": "1.0.0",
+    "main": "index.js",
+    "devDependencies": {},
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+    },
+    "author": "",
+    "license": "ISC",
+    "description": ""
 }
